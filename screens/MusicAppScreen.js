@@ -27,7 +27,7 @@ const MusicAppScreen = props => {
                     minimumValue={0}
                     maximumValue={100}
                     thumbTintColor='white'
-                    minimumTrackTintColor='yellow'
+                    minimumTrackTintColor='#ffff24'
                     maximumTrackTintColor='white'
                 >
                 </Slider>
@@ -38,27 +38,27 @@ const MusicAppScreen = props => {
             </View>
             <View style={styles.musicControlContainer}>
                 <TouchableOpacity onPress={()=>{}}>
-                    <AntDesign name="stepbackward" size={24} color="white" style={{marginTop:15}}/>
+                    <AntDesign name="stepbackward" size={24} color="#ffff24" style={{marginTop:15}}/>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={()=>{}}>
-                    <AntDesign name="playcircleo" size={50} color="yellow" />
+                    <AntDesign name="playcircleo" size={50} color="#ffff24" />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={()=>{}}>
-                    <AntDesign name="stepforward" size={24} color="white" style={{marginTop:15}}/>
+                    <AntDesign name="stepforward" size={24} color="#ffff24" style={{marginTop:15}}/>
                 </TouchableOpacity>
             </View>
             <View style={styles.buttonContainer}>
                 <TouchableOpacity onPress={() => { }}>
-                    <Entypo name="heart-outlined" size={24} color="white" />
+                    <Entypo name="heart-outlined" size={24} color="#ffff24" />
                 </TouchableOpacity >
                 <TouchableOpacity onPress={() => { }}>
-                    <Ionicons name="ios-repeat-sharp" size={28} color="white" style={{}} />
+                    <Ionicons name="ios-repeat-sharp" size={28} color="#ffff24" style={{}} />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => { }}>
-                    <Entypo name="share-alternative" size={24} color="white" />
+                    <Entypo name="share-alternative" size={24} color="#ffff24" />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => { }}>
-                    <SimpleLineIcons name="options-vertical" size={24} color="white" />
+                    <SimpleLineIcons name="options-vertical" size={24} color="#ffff24" />
                 </TouchableOpacity>
             </View>
         </View>
@@ -77,6 +77,10 @@ const styles = StyleSheet.create({
         marginTop: 150,
         marginBottom: 20,
         alignItems: 'center',
+        // shadowColor:'#ffff24',
+        // shadowOffset:{width:0,height:1},
+        // shadowOpacity:0.5,
+        // shadowRadius:15,
     },
     image: {
         width: '100%',
@@ -110,7 +114,7 @@ const styles = StyleSheet.create({
     },
     buttonContainer: {
         width: width,
-        borderTopColor: 'yellow',
+        borderTopColor: '#969696',
         borderWidth: 1,
         padding: 30,
         flexDirection: 'row',
