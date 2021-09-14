@@ -1,14 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image, Dimensions } from 'react-native';
-import { Entypo } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
-import { SimpleLineIcons } from '@expo/vector-icons';
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import Slider from '@react-native-community/slider';
-import { AntDesign } from '@expo/vector-icons';
+import colors from '../constants/colors';
+import ButtonContainer from '../components/ButtonContainer';
+import MusicControlContainer from '../components/MusicControlContainer';
 
-const { width, height } = Dimensions.get('window');
-
-const MusicAppScreen = props => {
+const MusicAppScreen = () => {
     return (
         <View style={styles.screen}>
             <View style={styles.container}>
@@ -17,8 +14,8 @@ const MusicAppScreen = props => {
                 </View>
             </View>
             <View style={styles.textContainer}>
-                <Text style={{ fontSize: 27, color: 'white', fontWeight: 'bold' }}>Fancy You</Text>
-                <Text style={{ fontSize: 20, color: 'white', marginTop: 10 }}>Twice</Text>
+                <Text style={{ fontSize: 27, color: colors.text, fontWeight: 'bold' }}>Fancy You</Text>
+                <Text style={{ fontSize: 20, color: colors.text, marginTop: 10 }}>Twice</Text>
             </View>
             <View>
                 <Slider
@@ -36,31 +33,8 @@ const MusicAppScreen = props => {
                 <Text style={styles.progressLabel}>0:00</Text>
                 <Text style={styles.progressLabel}>3:55</Text>
             </View>
-            <View style={styles.musicControlContainer}>
-                <TouchableOpacity onPress={()=>{}}>
-                    <AntDesign name="stepbackward" size={24} color="#ffff24" style={{marginTop:15}}/>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={()=>{}}>
-                    <AntDesign name="playcircleo" size={50} color="#ffff24" />
-                </TouchableOpacity>
-                <TouchableOpacity onPress={()=>{}}>
-                    <AntDesign name="stepforward" size={24} color="#ffff24" style={{marginTop:15}}/>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.buttonContainer}>
-                <TouchableOpacity onPress={() => { }}>
-                    <Entypo name="heart-outlined" size={24} color="#ffff24" />
-                </TouchableOpacity >
-                <TouchableOpacity onPress={() => { }}>
-                    <Ionicons name="ios-repeat-sharp" size={28} color="#ffff24" style={{}} />
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => { }}>
-                    <Entypo name="share-alternative" size={24} color="#ffff24" />
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => { }}>
-                    <SimpleLineIcons name="options-vertical" size={24} color="#ffff24" />
-                </TouchableOpacity>
-            </View>
+            <MusicControlContainer/>
+            <ButtonContainer/>
         </View>
     );
 };
@@ -80,7 +54,7 @@ const styles = StyleSheet.create({
         // shadowColor:'#ffff24',
         // shadowOffset:{width:0,height:1},
         // shadowOpacity:0.5,
-        // shadowRadius:15,
+        // shadowRadius:10,
     },
     image: {
         width: '100%',
@@ -103,23 +77,7 @@ const styles = StyleSheet.create({
         justifyContent:'space-between',
     },
     progressLabel:{
-        color:'white',
-    },
-    musicControlContainer:{
-        width:'60%',
-        flexDirection:'row',
-        justifyContent: 'space-between',
-        marginTop:16,
-        marginBottom:36,
-    },
-    buttonContainer: {
-        width: width,
-        borderTopColor: '#969696',
-        borderWidth: 1,
-        padding: 30,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
+        color:colors.text,
     }
-
 });
 export default MusicAppScreen;
